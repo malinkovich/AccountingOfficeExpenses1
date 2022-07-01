@@ -5,13 +5,8 @@
     <data>
         <instance id="subdivisionDc"
                   class="com.company.accountingofficeexpenses.entity.Subdivision">
-            <fetchPlan extends="_base">
-                <property name="employeesSubdiv" fetchPlan="_base">
-                    <property name="subdivEmployee" fetchPlan="_base"/>
-                </property>
-            </fetchPlan>
+            <fetchPlan extends="_base"/>
             <loader/>
-            <collection id="employeesSubdivDc" property="employeesSubdiv"/>
         </instance>
     </data>
     <facets>
@@ -36,25 +31,6 @@
                 <textField id="descriptionSubdivField" property="descriptionSubdiv"/>
             </column>
         </form>
-        <groupBox id="employeesSubdivBox"
-                  caption="msg://com.company.accountingofficeexpenses.entity/Subdivision.employeesSubdiv">
-            <table id="employeesSubdivTable" dataContainer="employeesSubdivDc" width="100%" height="200px">
-                <actions>
-                    <action id="create" type="create"/>
-                    <action id="edit" type="edit"/>
-                    <action id="remove" type="remove"/>
-                </actions>
-                <columns>
-                    <column id="nameEmployee"/>
-                    <column id="subdivEmployee"/>
-                </columns>
-                <buttonsPanel>
-                    <button action="employeesSubdivTable.create"/>
-                    <button action="employeesSubdivTable.edit"/>
-                    <button action="employeesSubdivTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
         <hbox id="editActions" spacing="true">
             <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
             <button id="closeBtn" action="windowClose"/>

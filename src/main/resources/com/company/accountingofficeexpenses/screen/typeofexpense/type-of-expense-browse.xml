@@ -6,9 +6,7 @@
     <data readOnly="true">
         <collection id="typeOfExpensesDc"
                     class="com.company.accountingofficeexpenses.entity.TypeOfExpense">
-            <fetchPlan extends="_base">
-                <property name="expenseType" fetchPlan="_base"/>
-            </fetchPlan>
+            <fetchPlan extends="_base"/>
             <loader id="typeOfExpensesDl">
                 <query>
                     <![CDATA[select e from TypeOfExpense e]]>
