@@ -15,6 +15,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -161,5 +162,14 @@ public class Employee {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    //подсчет суммы всех расходов
+    public BigDecimal sumAllSxpenseOfEmployee() {
+        int sum = 0;
+        for (int i = 0; i < getExpenseEmployee().size(); i++) {
+            sum += getExpenseEmployee().get(i).getSumExpense().intValue();
+        }
+        return new BigDecimal(sum);
     }
 }

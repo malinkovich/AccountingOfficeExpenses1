@@ -69,7 +69,8 @@ public class Expense {
     @NotNull
     private BigDecimal sumExpense;
 
-    @Column(name = "DOCUMENT_OF_EXPENSE", length = 1024)
+    @NotNull
+    @Column(name = "DOCUMENT_OF_EXPENSE", nullable = false, length = 1024)
     private FileRef documentOfExpense;
 
     @JoinColumn(name = "EMPLOYEE_EXPENSE_ID", nullable = false)
@@ -79,6 +80,14 @@ public class Expense {
     @JoinColumn(name = "TYPE_OF_EXPENSE_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private TypeOfExpense typeOfExpense;
+
+    public FileRef getDocumentOfExpense() {
+        return documentOfExpense;
+    }
+
+    public void setDocumentOfExpense(FileRef documentOfExpense) {
+        this.documentOfExpense = documentOfExpense;
+    }
 
     public TypeOfExpense getTypeOfExpense() {
         return typeOfExpense;
@@ -94,14 +103,6 @@ public class Expense {
 
     public void setEmployeeExpense(Employee employeeExpense) {
         this.employeeExpense = employeeExpense;
-    }
-
-    public FileRef getDocumentOfExpense() {
-        return documentOfExpense;
-    }
-
-    public void setDocumentOfExpense(FileRef documentOfExpense) {
-        this.documentOfExpense = documentOfExpense;
     }
 
     public BigDecimal getSumExpense() {
