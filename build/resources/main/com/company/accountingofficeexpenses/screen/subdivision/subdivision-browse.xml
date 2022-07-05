@@ -42,11 +42,13 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <!--Кнопка для создания отчета-->
+                <action id="report" type="listPrintForm"/>
             </actions>
             <columns>
-                <column id="titleSubdiv" caption="Subdivision title"/>
-                <column id="descriptionSubdiv" caption="Subdivision description"/>
-                <column id="employeeCount" caption="Number of employees"/>
+                <column id="titleSubdiv"/>
+                <column id="descriptionSubdiv"/>
+                <column id="employeeCount"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
@@ -54,6 +56,8 @@
                 <button id="createBtn" action="subdivisionsTable.create"/>
                 <button id="editBtn" action="subdivisionsTable.edit"/>
                 <button id="removeBtn" action="subdivisionsTable.remove"/>
+                <!--Кнопка для создания отчета-->
+                <button id="createReport" action="subdivisionsTable.report"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

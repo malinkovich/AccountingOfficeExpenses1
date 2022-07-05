@@ -4,13 +4,16 @@
   <persistence-unit name="main">
     <provider>io.jmix.data.impl.JmixPersistenceProvider</provider>
     <mapping-file>com/company/accountingofficeexpenses/orm.xml</mapping-file>
+    <class>io.jmix.reports.entity.ReportTemplate</class>
     <class>io.jmix.securitydata.entity.RowLevelPolicyEntity</class>
     <class>io.jmix.securitydata.entity.RoleAssignmentEntity</class>
     <class>com.company.accountingofficeexpenses.entity.Employee</class>
+    <class>io.jmix.reports.entity.ReportExecution</class>
     <class>io.jmix.securitydata.entity.StringCollectionConverter</class>
     <class>io.jmix.core.entity.UriConverter</class>
     <class>io.jmix.securitydata.entity.UserSubstitutionEntity</class>
     <class>io.jmix.securitydata.entity.ResourceRoleEntity</class>
+    <class>io.jmix.reports.entity.ReportGroup</class>
     <class>com.company.accountingofficeexpenses.entity.TypeOfExpense</class>
     <class>com.company.accountingofficeexpenses.entity.User</class>
     <class>com.company.accountingofficeexpenses.entity.Subdivision</class>
@@ -21,12 +24,13 @@
     <class>io.jmix.core.entity.FileRefConverter</class>
     <class>io.jmix.securitydata.entity.ResourcePolicyEntity</class>
     <class>com.company.accountingofficeexpenses.entity.Expense</class>
+    <class>io.jmix.reports.entity.Report</class>
     <class>io.jmix.uidata.entity.FilterConfiguration</class>
     <class>io.jmix.uidata.entity.UiSetting</class>
     <exclude-unlisted-classes/>
     <properties>
       <property name="eclipselink.weaving" value="static"/>
-      <property name="io.jmix.enhancing.converters-list" value="io.jmix.core.entity.UriConverter;io.jmix.core.entity.FileRefConverter;io.jmix.securitydata.entity.StringCollectionConverter;io.jmix.uidata.entity.FilterConditionConverter"/>
+      <property name="io.jmix.enhancing.converters-list" value="io.jmix.core.entity.UriConverter;io.jmix.core.entity.FileRefConverter;io.jmix.uidata.entity.FilterConditionConverter;io.jmix.securitydata.entity.StringCollectionConverter"/>
     </properties>
   </persistence-unit>
 </persistence>

@@ -76,20 +76,20 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Subdivision subdivEmployee;
 
-    public Subdivision getSubdivEmployee() {
-        return subdivEmployee;
-    }
-
-    public void setSubdivEmployee(Subdivision subdivEmployee) {
-        this.subdivEmployee = subdivEmployee;
-    }
-
     public List<Expense> getExpenseEmployee() {
         return expenseEmployee;
     }
 
     public void setExpenseEmployee(List<Expense> expenseEmployee) {
         this.expenseEmployee = expenseEmployee;
+    }
+
+    public Subdivision getSubdivEmployee() {
+        return subdivEmployee;
+    }
+
+    public void setSubdivEmployee(Subdivision subdivEmployee) {
+        this.subdivEmployee = subdivEmployee;
     }
 
     public String getNameEmployee() {

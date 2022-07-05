@@ -4,7 +4,6 @@ import io.jmix.core.FileRef;
 import io.jmix.core.annotation.DeletedBy;
 import io.jmix.core.annotation.DeletedDate;
 import io.jmix.core.entity.annotation.JmixGeneratedValue;
-import io.jmix.core.metamodel.annotation.InstanceName;
 import io.jmix.core.metamodel.annotation.JmixEntity;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -20,8 +19,8 @@ import java.util.UUID;
 
 @JmixEntity
 @Table(name = "EXPENSE", indexes = {
-        @Index(name = "IDX_EXPENSE", columnList = "EMPLOYEE_EXPENSE_ID"),
-        @Index(name = "IDX_EXPENSE", columnList = "TYPE_OF_EXPENSE_ID")
+        @Index(name = "IDX_EXPENSE", columnList = "TYPE_OF_EXPENSE_ID"),
+        @Index(name = "IDX_EXPENSE", columnList = "EMPLOYEE_EXPENSE_ID")
 })
 @Entity
 public class Expense {
@@ -64,7 +63,6 @@ public class Expense {
     @Column(name = "DATE_OF_EXPENSE")
     private LocalDateTime dateOfExpense;
 
-    @InstanceName
     @Column(name = "SUM_EXPENSE", nullable = false, precision = 19, scale = 2)
     @NotNull
     private BigDecimal sumExpense;
@@ -73,13 +71,21 @@ public class Expense {
     @Column(name = "DOCUMENT_OF_EXPENSE", nullable = false, length = 1024)
     private FileRef documentOfExpense;
 
+    @JoinColumn(name = "TYPE_OF_EXPENSE_ID", nullable = false)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private TypeOfExpense typeOfExpense;
+
     @JoinColumn(name = "EMPLOYEE_EXPENSE_ID", nullable = false)
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     private Employee employeeExpense;
 
-    @JoinColumn(name = "TYPE_OF_EXPENSE_ID", nullable = false)
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    private TypeOfExpense typeOfExpense;
+    public Employee getEmployeeExpense() {
+        return employeeExpense;
+    }
+
+    public void setEmployeeExpense(Employee employeeExpense) {
+        this.employeeExpense = employeeExpense;
+    }
 
     public FileRef getDocumentOfExpense() {
         return documentOfExpense;
@@ -95,14 +101,6 @@ public class Expense {
 
     public void setTypeOfExpense(TypeOfExpense typeOfExpense) {
         this.typeOfExpense = typeOfExpense;
-    }
-
-    public Employee getEmployeeExpense() {
-        return employeeExpense;
-    }
-
-    public void setEmployeeExpense(Employee employeeExpense) {
-        this.employeeExpense = employeeExpense;
     }
 
     public BigDecimal getSumExpense() {

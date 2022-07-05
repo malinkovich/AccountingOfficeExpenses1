@@ -6,10 +6,10 @@
         <instance id="expenseDc"
                   class="com.company.accountingofficeexpenses.entity.Expense">
             <fetchPlan extends="_base">
+                <property name="typeOfExpense" fetchPlan="_base"/>
                 <property name="employeeExpense" fetchPlan="_base">
                     <property name="subdivEmployee" fetchPlan="_base"/>
                 </property>
-                <property name="typeOfExpense" fetchPlan="_base"/>
             </fetchPlan>
             <loader/>
         </instance>
@@ -36,13 +36,13 @@
                     <dateField id="dateOfExpenseField" property="dateOfExpense"/>
                     <textField id="sumExpenseField" property="sumExpense"/>
                     <fileStorageUpload id="documentOfExpenseField" property="documentOfExpense"/>
-                    <entityPicker id="employeeExpenseField" property="employeeExpense">
+                    <entityPicker id="typeOfExpenseField" property="typeOfExpense">
                         <actions>
                             <action id="entityLookup" type="entity_lookup"/>
                             <action id="entityClear" type="entity_clear"/>
                         </actions>
                     </entityPicker>
-                    <entityPicker id="typeOfExpenseField" property="typeOfExpense">
+                    <entityPicker id="employeeExpenseField" property="employeeExpense">
                         <actions>
                             <action id="entityLookup" type="entity_lookup"/>
                             <action id="entityClear" type="entity_clear"/>
