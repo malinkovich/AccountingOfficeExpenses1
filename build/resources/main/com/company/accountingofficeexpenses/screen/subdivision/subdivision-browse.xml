@@ -48,7 +48,7 @@
             <columns>
                 <column id="titleSubdiv"/>
                 <column id="descriptionSubdiv"/>
-                <column id="employeeCount"/>
+                <column id="employeeCount" caption="msg://com.company.accountingofficeexpenses.screen.subdivision/subdivision.employeeCount"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"

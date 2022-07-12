@@ -1,0 +1,4 @@
+ID;VERSION;TITLE_TYPE_EXPENSE;DESCRIPTION_TYPE_EXPENSE;LIMIT_SUM_EMPLOYEE
+1b7a0b16-0136-11ed-b939-0242ac120002;1;Small expense;Small amount type;500000
+1b7a0dd2-0136-11ed-b939-0242ac120002;1;Average expense;Type for average sums;700000
+1b7a0f1c-0136-11ed-b939-0242ac120002;1;Big expense;Type for large amounts;1000000
