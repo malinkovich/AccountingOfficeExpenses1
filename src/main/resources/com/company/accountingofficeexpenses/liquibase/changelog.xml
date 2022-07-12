@@ -11,5 +11,7 @@
     <property name="uuid.type" dbms="!oracle" value="uuid"/>
 
     <includeAll path="/com/company/accountingofficeexpenses/liquibase/changelog"/>
+    <includeAll path="/com/company/accountingofficeexpenses/liquibase/changelog/date"/>
 
+<!--    <include file="com/company/accountingofficeexpenses/liquibase/changelog/2022/06/28-010-4f050ba8.xml"/>-->
 </databaseChangeLog>

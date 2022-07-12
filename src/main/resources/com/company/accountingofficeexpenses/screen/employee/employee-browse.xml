@@ -44,6 +44,8 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <!--Кнопка для создания отчета-->
+                <action id="report" type="listPrintForm"/>
             </actions>
             <columns>
                 <column id="nameEmployee"/>
@@ -55,6 +57,8 @@
                 <button id="createBtn" action="employeesTable.create"/>
                 <button id="editBtn" action="employeesTable.edit"/>
                 <button id="removeBtn" action="employeesTable.remove"/>
+                <!--Кнопка для создания отчета-->
+                <button id="createReport" action="employeesTable.report"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

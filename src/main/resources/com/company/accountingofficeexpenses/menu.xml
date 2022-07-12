@@ -1,17 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://jmix.io/schema/ui/menu">
 
-    <menu id="application" caption="msg://com.company.accountingofficeexpenses/menu.application" insertBefore="administration">
-        <item screen="User.browse" caption="msg://com.company.accountingofficeexpenses.screen.user/UserBrowse.caption"/>
-        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption"/>
-        <item screen="Employee.browse"
-              caption="msg://com.company.accountingofficeexpenses.screen.employee/employeeBrowse.menu"/>
+    <!--<menu id="application" caption="msg://com.company.accountingofficeexpenses/menu.application" insertBefore="administration">
+        <item screen="User.browse" caption="msg://com.company.accountingofficeexpenses.screen.user/UserBrowse.caption" insertBefore="ui_JmxConsoleScreen"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption" insertBefore="ui_JmxConsoleScreen"/>
         <item screen="Subdivision.browse"
               caption="msg://com.company.accountingofficeexpenses.screen.subdivision/subdivisionBrowse.menu"/>
         <item screen="TypeOfExpense.browse"
               caption="msg://com.company.accountingofficeexpenses.screen.typeofexpense/typeOfExpenseBrowse.menu"/>
+        <item screen="Employee.browse"
+              caption="msg://com.company.accountingofficeexpenses.screen.employee/employeeBrowse.menu"/>
+        <item screen="Expense.browse"
+              caption="msg://com.company.accountingofficeexpenses.screen.expense/expenseBrowse.menu"/>
+    </menu>-->
+
+    <menu id="application" caption="msg://com.company.accountingofficeexpenses/menu.application" insertBefore="administration">
+        <item screen="Subdivision.browse"
+              caption="msg://com.company.accountingofficeexpenses.screen.subdivision/subdivisionBrowse.menu"/>
+        <item screen="TypeOfExpense.browse"
+              caption="msg://com.company.accountingofficeexpenses.screen.typeofexpense/typeOfExpenseBrowse.menu"/>
+        <item screen="Employee.browse"
+              caption="msg://com.company.accountingofficeexpenses.screen.employee/employeeBrowse.menu"/>
         <item screen="Expense.browse"
               caption="msg://com.company.accountingofficeexpenses.screen.expense/expenseBrowse.menu"/>
     </menu>
-
+    <menu id="administration" caption="msg://com.company.accountingofficeexpenses/menu.administration">
+        <item screen="User.browse" caption="msg://com.company.accountingofficeexpenses.screen.user/UserBrowse.caption" insertBefore="ui_JmxConsoleScreen"/>
+        <item screen="themeSettingsScreen" caption="msg://io.jmix.ui.app.themesettings/themeSettings.caption" insertBefore="ui_JmxConsoleScreen"/>
+    </menu>
 </menu-config>

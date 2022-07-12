@@ -7,10 +7,10 @@
         <collection id="expensesDc"
                     class="com.company.accountingofficeexpenses.entity.Expense">
             <fetchPlan extends="_base">
+                <property name="typeOfExpense" fetchPlan="_base"/>
                 <property name="employeeExpense" fetchPlan="_base">
                     <property name="subdivEmployee" fetchPlan="_base"/>
                 </property>
-                <property name="typeOfExpense" fetchPlan="_base"/>
             </fetchPlan>
             <loader id="expensesDl">
                 <query>
@@ -52,8 +52,8 @@
                 <column id="dateOfExpense"/>
                 <column id="sumExpense"/>
                 <column id="documentOfExpense"/>
-                <column id="employeeExpense"/>
                 <column id="typeOfExpense"/>
+                <column id="employeeExpense"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
