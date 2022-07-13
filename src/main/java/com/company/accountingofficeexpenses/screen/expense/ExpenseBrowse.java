@@ -10,6 +10,9 @@ import com.company.accountingofficeexpenses.entity.Expense;
 public class ExpenseBrowse extends StandardLookup<Expense> {
     @Install(to = "expensesTable.documentOfExpense", subject = "valueProvider")
     private Object expensesTableDocumentOfExpenseValueProvider(Expense expense) {
-        return expense.getDocumentOfExpense().getFileName();
+        if (expense.getDocumentOfExpense() != null) {
+            return expense.getDocumentOfExpense().getFileName();
+        }
+        else return "";
     }
 }

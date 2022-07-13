@@ -11,11 +11,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class ExpenseEdit extends StandardEditor<Expense> {
     @Autowired
     private Notifications notifications;
+    @Autowired
+    private MessageBundle messageBundle;
     @Subscribe
     public void onBeforeCommitChanges(BeforeCommitChangesEvent event) {
         if (getEditedEntity().getSumExpense().add(getEditedEntity().getEmployeeExpense().sumAllSxpenseOfEmployee()).intValue() >
                 getEditedEntity().getTypeOfExpense().getLimitSumEmployee().intValue()) {
-            notifications.create().withCaption("Your sum is more than the monthly limit").show();
+            notifications.create().withCaption(messageBundle.getMessage("expenseEdit.createExpense")).show();
             event.preventCommit();
         }
         else event.resume();

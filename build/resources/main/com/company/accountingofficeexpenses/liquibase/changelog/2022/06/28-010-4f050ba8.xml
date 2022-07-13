@@ -74,26 +74,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet id="8" author="AccountingOfficeExpenses" runOnChange="true">
-        <loadData tableName="SUBDIVISION"
-                  file="com/company/accountingofficeexpenses/liquibase/changelog/date/subdivision.csv"
-                  separator=";">
-            <column name="ID" type="UUID"/>
-            <column name="TITLE_SUBDIV" type="VARCHAR(255)"/>
-            <column name="DESCRIPTION_SUBDIV" type="VARCHAR(255)"/>
-            <column name="VERSION" type="INT"/>
-        </loadData>
-    </changeSet>
-    <changeSet id="9" author="AccountingOfficeExpenses" runOnChange="true">
-        <loadData tableName="EMPLOYEE"
-                  file="com/company/accountingofficeexpenses/liquibase/changelog/date/employee.csv"
-                  separator=";">
-            <column name="ID" type="UUID"/>
-            <column name="VERSION" type="INT"/>
-            <column name="NAME_EMPLOYEE" type="VARCHAR(255)"/>
-            <column name="SUBDIV_EMPLOYEE_ID" type="UUID"/>
-        </loadData>
-    </changeSet>
+
     <changeSet id="4" author="AccountingOfficeExpenses">
         <createTable tableName="TYPE_OF_EXPENSE">
             <column name="ID" type="UUID">
@@ -116,30 +97,6 @@
                 <constraints nullable="false"/>
             </column>
         </createTable>
-    </changeSet>
-    <changeSet id="10" author="AccountingOfficeExpenses" runOnChange="true">
-        <loadData tableName="TYPE_OF_EXPENSE"
-                  file="com/company/accountingofficeexpenses/liquibase/changelog/date/type.csv"
-                  separator=";">
-            <column name="ID" type="UUID"/>
-            <column name="VERSION" type="INT"/>
-            <column name="TITLE_TYPE_EXPENSE" type="VARCHAR(255)"/>
-            <column name="DESCRIPTION_TYPE_EXPENSE" type="VARCHAR(255)"/>
-            <column name="LIMIT_SUM_EMPLOYEE" type="DECIMAL(19, 2)"/>
-        </loadData>
-    </changeSet>
-    <changeSet id="11" author="AccountingOfficeExpenses" runOnChange="true">
-        <loadData tableName="EXPENSE"
-                  file="com/company/accountingofficeexpenses/liquibase/changelog/date/expense.csv"
-                  separator=";">
-            <column name="ID" type="UUID"/>
-            <column name="VERSION" type="INT"/>
-            <column name="DATE_OF_EXPENSE" type="DATETIME"/>
-            <column name="SUM_EXPENSE" type="DECIMAL(19, 2)"/>
-            <column name="DOCUMENT_OF_EXPENSE" type="VARCHAR(1024)"/>
-            <column name="EMPLOYEE_EXPENSE_ID" type="UUID"/>
-            <column name="TYPE_OF_EXPENSE_ID" type="UUID"/>
-        </loadData>
     </changeSet>
     <changeSet id="5" author="AccountingOfficeExpenses">
         <createIndex indexName="IDX_EMPLOYEE" tableName="EMPLOYEE">

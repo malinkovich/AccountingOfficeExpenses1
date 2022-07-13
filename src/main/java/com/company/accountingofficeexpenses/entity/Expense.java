@@ -67,8 +67,7 @@ public class Expense {
     @NotNull
     private BigDecimal sumExpense;
 
-    @NotNull
-    @Column(name = "DOCUMENT_OF_EXPENSE", nullable = false, length = 1024)
+    @Column(name = "DOCUMENT_OF_EXPENSE", length = 1024)
     private FileRef documentOfExpense;
 
     @JoinColumn(name = "TYPE_OF_EXPENSE_ID", nullable = false)
